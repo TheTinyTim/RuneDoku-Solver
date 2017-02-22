@@ -1,0 +1,10 @@
+d:\documents\visual studio 2012\Projects\RuneDoku Solver\RuneDoku Solver\bin\Debug\RuneDoku Solver.exe.config
+d:\documents\visual studio 2012\Projects\RuneDoku Solver\RuneDoku Solver\obj\Debug\RuneDoku Solver.csprojResolveAssemblyReference.cache
+d:\documents\visual studio 2012\Projects\RuneDoku Solver\RuneDoku Solver\obj\Debug\RuneDoku_Solver.Form1.resources
+d:\documents\visual studio 2012\Projects\RuneDoku Solver\RuneDoku Solver\obj\Debug\RuneDoku_Solver.Properties.Resources.resources
+d:\documents\visual studio 2012\Projects\RuneDoku Solver\RuneDoku Solver\obj\Debug\RuneDoku Solver.csproj.GenerateResource.Cache
+d:\documents\visual studio 2012\Projects\RuneDoku Solver\RuneDoku Solver\bin\Debug\RuneDoku Solver.exe
+d:\documents\visual studio 2012\Projects\RuneDoku Solver\RuneDoku Solver\bin\Debug\RuneDoku Solver.pdb
+d:\documents\visual studio 2012\Projects\RuneDoku Solver\RuneDoku Solver\obj\Debug\RuneDoku Solver.exe
+d:\documents\visual studio 2012\Projects\RuneDoku Solver\RuneDoku Solver\obj\Debug\RuneDoku Solver.pdb
+d:\documents\visual studio 2012\Projects\RuneDoku Solver\RuneDoku Solver\bin\Debug\Gma.System.MouseKeyHook.dll
