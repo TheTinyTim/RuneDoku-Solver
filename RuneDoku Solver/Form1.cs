@@ -198,5 +198,14 @@ namespace RuneDoku_Solver
             ProgramLoop.Stop();
             this.Close();
         }
+
+        /// <summary>
+        /// Find out if the user closes the program from the form window
+        /// </summary>
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            notifyIcon.Dispose();
+            ProgramLoop.Stop();
+        }
     }
 }
