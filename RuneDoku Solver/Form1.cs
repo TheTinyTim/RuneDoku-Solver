@@ -20,6 +20,8 @@ namespace RuneDoku_Solver
         [DllImport("user32.dll")]
         static extern IntPtr GetForegroundWindow();
         [DllImport("user32.dll")]
+        public static extern IntPtr GetWindowThreadProcessId(IntPtr hWnd, out uint ProcessId);
+        [DllImport("user32.dll")]
         static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
         
         // Timers
@@ -50,15 +52,21 @@ namespace RuneDoku_Solver
             this.WindowState = FormWindowState.Minimized;
             this.Hide();
             notifyIcon.Visible = true;
-            notifyIcon.ShowBalloonTip(30);
+            notifyIcon.ShowBalloonTip(20);
             Application.EnableVisualStyles();
 
             // create the context menu for the notify icon to have an exit button
             ContextMenu contextMenu = new ContextMenu();
+            MenuItem helpMenuItem = new MenuItem();
             MenuItem exitMenuItem = new MenuItem();
+            contextMenu.MenuItems.Add(helpMenuItem);
+            contextMenu.MenuItems.Add("-");
             contextMenu.MenuItems.Add(exitMenuItem);
+            // tie the help window to open with the correct menu item
+            helpMenuItem.Index = 0;
+            helpMenuItem.Text = "Help";
             // tie the function to close the program with the correct menu item
-            exitMenuItem.Index = 0;
+            exitMenuItem.Index = 2;
             exitMenuItem.Text = "Exit";
             exitMenuItem.Click += new System.EventHandler(CloseProgram);
             // add the context menu to the notifyicon
@@ -87,18 +95,24 @@ namespace RuneDoku_Solver
         /// </summary>
         private void MainProgramLoop(object sender, EventArgs e)
         {
-            // Check to see if the RSWindow has been found if not make sure to find that
-            // before the program starts
+            // Check to see if the user has selected the RSWindow to be used
+            // if not make the user selects it before the program starts
             if (RSWindowHandle == IntPtr.Zero)
             {
-                string windowTitle = "";
-                try
+                if (HOOK_HANDLER.grabWindow)
                 {
-                    windowTitle = GetActiveWindowTitle().ToLower();
+                    string windowProcName = GetActiveProcessFileName();
+                    if (windowProcName != "OSBuddy.exe" && windowProcName != "Jagex Launcher.exe")
+                    {
+                        notifyIcon.BalloonTipText = $"The window, {windowProcName}, you're trying to grab is not a runescape window! It needs to be the regular Runescape client or the OSBuddy client.";
+                        notifyIcon.ShowBalloonTip(10);
+                    } else
+                    {
+                        RSWindowHandle = GetForegroundWindow();
+                        notifyIcon.BalloonTipText = $"{windowProcName} grabbed!";
+                        notifyIcon.ShowBalloonTip(10);
+                    }                    
                 }
-                catch (Exception exception) { }
-                if (windowTitle.Contains("osbuddy") || windowTitle.Contains("Old School Runescape"))
-                    RSWindowHandle = GetForegroundWindow();
             }
             else
             {
@@ -161,12 +175,27 @@ namespace RuneDoku_Solver
         }
 
         /// <summary>
+        /// Retrive the name of the active windows process
+        /// </summary>
+        /// <returns>The process name of the active window</returns>
+        public string GetActiveProcessFileName()
+        {
+            IntPtr hwnd = GetForegroundWindow();
+            uint pid;
+            GetWindowThreadProcessId(hwnd, out pid);
+            Process activeProcess = Process.GetProcessById((int)pid);
+            string[] processPath = activeProcess.MainModule.FileName.Split('\\');
+            return processPath[processPath.Length-1];
+        }
+
+        /// <summary>
         /// This will close the program.
         /// Called when the exit button on the notifyicon context menu is clicked.
         /// </summary>
         private void CloseProgram(object sender, EventArgs e)
         {
             notifyIcon.Dispose();
+            ProgramLoop.Stop();
             this.Close();
         }
     }

@@ -35,7 +35,8 @@
             // 
             // notifyIcon
             // 
-            this.notifyIcon.BalloonTipText = "Runedoku is running in the background";
+            this.notifyIcon.BalloonTipText = "Runedoku is running in the background. Please press F12 when you\'re on the Runesc" +
+    "ape window you\'d like to use!";
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
             this.notifyIcon.Text = "Runedoku Solver";
             this.notifyIcon.Visible = true;
@@ -55,7 +56,6 @@
         #endregion
 
         private System.Windows.Forms.NotifyIcon notifyIcon;
-
     }
 }
 

@@ -8,3 +8,14 @@ d:\documents\visual studio 2012\Projects\RuneDoku Solver\RuneDoku Solver\bin\Deb
 d:\documents\visual studio 2012\Projects\RuneDoku Solver\RuneDoku Solver\obj\Debug\RuneDoku Solver.exe
 d:\documents\visual studio 2012\Projects\RuneDoku Solver\RuneDoku Solver\obj\Debug\RuneDoku Solver.pdb
 d:\documents\visual studio 2012\Projects\RuneDoku Solver\RuneDoku Solver\bin\Debug\Gma.System.MouseKeyHook.dll
+D:\Documents\GitHub\RuneDoku-Solver\RuneDoku Solver\bin\Debug\RuneDoku Solver.exe.config
+D:\Documents\GitHub\RuneDoku-Solver\RuneDoku Solver\obj\Debug\RuneDoku Solver.exe
+D:\Documents\GitHub\RuneDoku-Solver\RuneDoku Solver\obj\Debug\RuneDoku Solver.pdb
+D:\Documents\GitHub\RuneDoku-Solver\RuneDoku Solver\bin\Debug\RuneDoku Solver.exe
+D:\Documents\GitHub\RuneDoku-Solver\RuneDoku Solver\bin\Debug\RuneDoku Solver.pdb
+D:\Documents\GitHub\RuneDoku-Solver\RuneDoku Solver\bin\Debug\Gma.System.MouseKeyHook.dll
+D:\Documents\GitHub\RuneDoku-Solver\RuneDoku Solver\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Documents\GitHub\RuneDoku-Solver\RuneDoku Solver\obj\Debug\RuneDoku Solver.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\RuneDoku-Solver\RuneDoku Solver\obj\Debug\RuneDoku_Solver.Form1.resources
+D:\Documents\GitHub\RuneDoku-Solver\RuneDoku Solver\obj\Debug\RuneDoku_Solver.Properties.Resources.resources
+D:\Documents\GitHub\RuneDoku-Solver\RuneDoku Solver\obj\Debug\RuneDoku Solver.csproj.GenerateResource.Cache

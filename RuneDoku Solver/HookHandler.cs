@@ -20,6 +20,7 @@ namespace RuneDoku_Solver
         // ButtonVariables
         public bool lmbClicked = false;
         public bool escPressed = false;
+        public bool grabWindow = false;
 
         /// <summary>
         /// Construct all the variables needed for this class
@@ -74,6 +75,10 @@ namespace RuneDoku_Solver
             {
                 escPressed = false;
             }
+            if (e.KeyCode == Keys.F12)
+            {
+                grabWindow = false;
+            }
         }
 
         /// <summary>
@@ -84,6 +89,10 @@ namespace RuneDoku_Solver
             if (e.KeyCode == Keys.Escape)
             {
                 escPressed = true;
+            }
+            if (e.KeyCode == Keys.F12)
+            {
+                grabWindow = true;
             }
         }
     }
