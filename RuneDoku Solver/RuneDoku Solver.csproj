@@ -76,7 +76,6 @@
     <Compile Include="Hotkey.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="OldSudokuSolver.cs" />
     <Compile Include="RuneDokuSolution.cs" />
     <Compile Include="SudokuBoard.cs" />
     <Compile Include="SudokuFactory.cs" />
