@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace RuneDoku_Solver
 {
-    public class RuneDokuSolution
+    public class RuneDokuSolutionHandler
     {
         // Parent Script
         public Form1 PARENT_SCRIPT;
@@ -27,7 +27,7 @@ namespace RuneDoku_Solver
         /// </summary>
         /// <param name="parent">The Parent Script Used To Access Other Classes</param>
         /// <returns>The created RuneDokuSolution Class</returns>
-        public RuneDokuSolution ConstructVariables(Form1 parent)
+        public RuneDokuSolutionHandler ConstructVariables(Form1 parent)
         {
             // set up the parent script
             PARENT_SCRIPT = parent;

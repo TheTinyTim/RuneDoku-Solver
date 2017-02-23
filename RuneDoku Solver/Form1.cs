@@ -33,7 +33,7 @@ namespace RuneDoku_Solver
         // Classes
         public WindowHandler WINDOW_HANDLER;
         public HookHandler HOOK_HANDLER;
-        public RuneDokuSolution RUNEDOKU_SOLUTION;
+        public RuneDokuSolutionHandler RUNEDOKU_SOLUTION;
 
         // IntPtr
         public IntPtr RSWindowHandle = IntPtr.Zero;
@@ -78,7 +78,7 @@ namespace RuneDoku_Solver
 
             // start and setup all the used classes
             WINDOW_HANDLER = new WindowHandler().ConstructVariables(this);
-            RUNEDOKU_SOLUTION = new RuneDokuSolution().ConstructVariables(this);
+            RUNEDOKU_SOLUTION = new RuneDokuSolutionHandler().ConstructVariables(this);
             HOOK_HANDLER = new HookHandler().ConstructVariables(this);
 
             // set up all the timers
